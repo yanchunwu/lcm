@@ -53,8 +53,8 @@ add_subdirectory(lcm)
 add_subdirectory(lcmgen)
 add_subdirectory(lcm-logger)
 
-option(LCM_ENABLE_EXAMPLES "Build test and example programs" ON)
-if(LCM_ENABLE_EXAMPLES)
+option(LCM_ENABLE_TEST_UTILS "Build test utility programs (lcm-tester, lcm-source, lcm-sink, etc.)" ON)
+if(LCM_ENABLE_TEST_UTILS)
   add_subdirectory(liblcm-test)
 endif()
 

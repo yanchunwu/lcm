@@ -31,11 +31,8 @@ endif
 # Documentation (Main, C/C++, .NET)
 # subdir('docs')
 
-# Doesn't seem to compile examples but compiles tests?
-# We don't want to compile examples, which makes this option misleading, but it
-# is how it is in the CMakeLists.txt file.
-# Examples
-if not get_option('lcm_enable_examples').disabled()
+# Test utilities (lcm-tester, lcm-source, lcm-sink, etc.)
+if not get_option('lcm_enable_test_utils').disabled()
   subdir('liblcm-test')
 endif
 
@@ -68,7 +65,7 @@ if not get_option('lcm_install_pkgconfig').disabled()
   subdir('lcm-pkgconfig')
 endif
 
-enabled_options = {'Build test and example programs': get_option('lcm_enable_examples'),
+enabled_options = {'Build test utility programs': get_option('lcm_enable_test_utils'),
                     'Build unit tests': get_option('lcm_enable_tests'),
                     'Install autotools support M4 macros': get_option('lcm_install_m4macros'),
                     'Install pkg-config files': get_option('lcm_install_pkgconfig'),
